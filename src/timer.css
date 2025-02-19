@@ -1,6 +1,6 @@
 /* Body styles */
 body {
-    background-color: rgb(255, 252, 233);
+    background-color: #fff6eb;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -23,10 +23,11 @@ h1#task-title {
 #timer {
     font-size: 4em;
     font-weight: bold;
-    background-color: #ff8c42;
-    color: white;
+    background-color: #fff;
+    color: #453f3c;
     padding: 50px;
     border-radius: 10px;
+    border: 2px solid #453f3c;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 150px;
     margin: 10px;
@@ -44,7 +45,7 @@ div {
 button {
     padding: 15px 30px;
     font-size: 1.2em;
-    background-color: #4CAF50;
+    background-color: #99b2dd;
     color: white;
     border: none;
     border-radius: 8px;
@@ -53,12 +54,12 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #99b2dd;
     transform: translateY(-3px);
 }
 
 button:active {
-    background-color: #388e3c;
+    background-color: #879cc1;
     transform: translateY(1px);
 }
 
