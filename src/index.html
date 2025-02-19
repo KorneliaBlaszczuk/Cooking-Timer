@@ -11,14 +11,15 @@
 </head>
 
 <body>
-    <div>
-        <h1>Cooking Timer</h1>
-        <h2>Choose Object to Time</h2>
-        <ul id="product-list">
-            <!-- Lista produktów z Firebase -->
-        </ul>
-    </div>
-
+    <header></header>
+    <main>
+        <div>
+            <h1>Choose Object to Time</h1>
+            <ul id="product-list">
+                <!-- Lista produktów z Firebase -->
+            </ul>
+        </div>
+    </main>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
         import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
