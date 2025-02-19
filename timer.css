@@ -1,0 +1,68 @@
+/* Body styles */
+body {
+    background-color: rgb(255, 252, 233);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Header styling */
+h1#task-title {
+    font-size: 3em;
+    color: #2b2d42;
+    margin-bottom: 20px;
+}
+
+/* Timer styling */
+#timer {
+    font-size: 4em;
+    font-weight: bold;
+    background-color: #ff8c42;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    margin: 10px;
+}
+
+/* Button container */
+div {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Button styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #388e3c;
+    transform: translateY(1px);
+}
+
+/* Alarm sound styling */
+audio {
+    display: none;
+}

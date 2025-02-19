@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,17 +7,57 @@
     <title>Cooking Timer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div>
         <h1>Cooking Timer</h1>
         <h2>Choose Object to Time</h2>
-        <ul>
-            <li><a href="timer.html?task=HardBoiledEgg">Hard Boiled Egg</a></li>
+        <ul id="product-list">
+            <!-- Lista produktów z Firebase -->
         </ul>
     </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+        import { firebaseConfig } from "./firebaseConfig.js";
+
+        // Inicjalizacja Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Pobieranie danych i generowanie listy produktów
+        function fetchProducts() {
+            const productsRef = ref(database, 'cooking_times');
+            get(productsRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const products = snapshot.val();
+                    const productList = document.getElementById('product-list');
+                    productList.innerHTML = '';
+
+                    for (const key in products) {
+                        if (products.hasOwnProperty(key)) {
+                            const product = products[key];
+                            const listItem = document.createElement('li');
+                            const productLink = document.createElement('a');
+                            productLink.href = `timer.html?task=${encodeURIComponent(product.product_name)}&time=${product.cooking_time}`;
+                            productLink.textContent = `${product.product_name} - ${product.cooking_time} minutes`;
+                            listItem.appendChild(productLink);
+                            productList.appendChild(listItem);
+                        }
+                    }
+                } else {
+                    console.log("Brak danych");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+        }
+
+        window.onload = fetchProducts;
+    </script>
 </body>
 
 </html>

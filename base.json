@@ -1,0 +1,12 @@
+{
+    "cooking_times": {
+        "HardBoiledEgg": {
+            "product_name": "Hard Boiled Egg",
+            "cooking_time": 10
+        },
+        "Rice": {
+            "product_name": "Rice",
+            "cooking_time": 20
+        }
+    }
+}
