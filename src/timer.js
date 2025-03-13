@@ -45,8 +45,7 @@ function stopTimer() {
 // Reset the timer to 5 minutes
 function resetTimer() {
     clearInterval(countdown);
-    totalTime = 600;
-    updateDisplay(totalTime);
+    updateDisplay(time * 60);
 }
 
 
