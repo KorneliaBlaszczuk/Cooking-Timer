@@ -17,11 +17,17 @@ The Cooking Timer Web App is designed to help users cook dishes perfectly by kee
 ## Tech Stack
 
 - **Frontend**:
-  - HTML
-  - CSS
-  - JavaScript
+  - **HTML**: Markup structure for the app’s pages.
+  - **CSS**: Styling for the app's layout and design.
+  - **JavaScript**: Dynamic behavior for the app, including timer control and interacting with the Firebase database.
+  
 - **Backend**:
-  - Firebase (for storing dish data and recipes)
+  - **Node.js**: A JavaScript runtime environment used to build the backend server. It handles requests from the front end, processes them, and interacts with Firebase for data retrieval and storage.
+  - **Express.js**: A lightweight web framework built on top of Node.js, making it easier to handle HTTP requests and define routes for your app’s backend services.
+
+- **Database**:
+  - **Firebase**: A NoSQL cloud database used to store dish data and any other relevant app information. It also handles user authentication and real-time data syncing.
+
 
 ---
 
